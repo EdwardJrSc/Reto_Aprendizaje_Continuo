@@ -1,0 +1,130 @@
+HU001 - Realizar cursos
+
+YO COMO Colaborador
+QUIERO 	Ingresar a academy
+PARA	Realizar un curso
+
+
+------------------------- CRITERIOS DE ACEPTACIÓN -------------------------
+
+- El sistema debe mostrar todas las categorias disponibles:
+  (Universidad choucair, Cursos y certificaciones, seleccion choucair y
+  plan carrera). ok
+
+- El usuario solo podrá ingresar a las categorias de Universidad choucair y
+  Cursos y Certificaciones. ok ok
+
+- En la categoria de cursos y certificaciones debe mostras todos los cursos
+  disponibles para el usuario.
+
+- El aplicativo en el modulo de cursos y certificaciones debe mostrar en una
+  lista desplegable con las diferentes categorias y cursos.
+
+- Al momento de ingresar a cualquier curso, si el usuario no está matriculado,
+  debe aparecer el mensaje "No se puede auto matricular en este curso".
+
+
+
+-------------------------------- TEST CASES --------------------------------
+
+- CP_01: El sistema debe mostrar todas las categorias disponibles:
+  (Universidad choucair, Cursus y certificaciones, seleccion choucair y
+  plan carrera).
+  
+  ACCIONES:
+  1. Ingresar a la plataforma choucair academy.
+	Resultado esperado: Se deben ver todas las categorias disponibles
+CP_02: El usuario solo podrá ingresar a la categoria de Universidad Choucair si está matriculado
+
+  ACCIONES:
+  1. Ingresar a la plataforma choucair academy.
+  2. Ingresar a la categoria Universidad choucair.
+ Resultado esperado: El sistema no debe permitir ingresar al modulo si no está matriculado.
+
+- CP_03: El usuario solo podrá ingresar a la categoria de Cursos y Certificaciones si está matriculado
+
+  ACCIONES:
+  1. Ingresar a la plataforma choucair academy.
+  2. Clic sistema debe permitir ingresar a la categoria Cursos y Certificaciones.
+ Resultado esperado: El aplicativo no debe permitir ingresar al modulo si no está matriculado en ningun curso
+
+- CP_04: En la categoria de cursos y certificaciones debe mostras todos los cursos
+  disponibles para el usuario.
+
+  ACCIONES:
+  1. Ingresar a la plataforma de choucair academy.
+  2. Ingresar a la categoria de cursos y certificaciones.
+	Resultado esperado: El sistema de mostrar un listado con todos los cursos
+	disponibles que pueden realizar el usuario
+
+- CP_05: El aplicativo en el modulo de cursos y certificaciones debe mostrar en una
+  lista desplegable con las diferentes categorias y cursos.
+
+  ACCIONES:
+  1. Ingresar a la plataforma de choucair academy.
+  2. Ingresar a la categoria de cursos y certificaciones.
+	Resultado esperado: El aplicativo debe mostrar una lista desplegable donde
+	se muestran las escuelas y los cursos disponibles para el usuario.
+
+- CP_06: Al momento de ingresar a cualquier curso, si el usuario no está
+  matriculado, debe aparecer el mensaje "No se puede auto matricular en
+  este curso".
+
+  ACCIONES:
+  1. Ingresar a la plataforma de choucair academy.
+  2. Ingresar a la categoria de cursos y certificaciones.
+  3. Clic en cualquiera de los cursos que aparecen
+	Resultado esperado: Se debe mostrar en pantalla el mensaje
+	"No se puede auto matricular en este curso"
+
+
+
+------------------------------ CRITERIOS FINALES ------------------------------
+
+A. ¿Cree usted que puede diseñar casos de prueba sin tener la aplicación?
+¿por qué?
+
+Se pueden diseñar los casos de pruebas sin el aplicativo pero, siempre y cuando
+se tenga el conocimiento claro de las rutas y los modulos dentro del aplicativo,
+pero se recomienda, para evitar volver a diseñar los casos de pruebas, tener
+siempre el aplicativo disponible con la ultima versión en un ambiente de pruebas
+apto.
+
+
+B. ¿Qué información o documentación considera importante para el
+inicio de las pruebas?
+
+Las HU. Las HU son las que nos permiten contextualizarnos al momento de realizar
+los test cases, unas HUs bien definidas nos permitiran entender mejor el negocio
+y por ende, diseñar de mejor manera los casos de prueba.
+
+
+C. ¿si la documentación no es clara usted que haría?
+
+Como primera instancia preguntarle a cualquiera de mis compañeros que tenga más
+conocimiento sobre el negocio del cliente, si ninguno de ellos puede despejarme
+las dudas, acudiré al supervisor del proyecto; en caso que ninguno del equipo
+Choucair pueda ayudarme, en ultima instancia pediría apoyo a PO.
+
+
+D. ¿Quién cree que es el responsable de que usted conozca el contexto de negocio
+y la aplicación a probar?
+
+El equipo en el que me encuentre, incluyendome.
+
+
+E. ¿si entregara un informe de avance de sus pruebas que información relacionaría?
+
+En dicho informe relacionaría el estado de sprint actual y de los sprints
+anteriores, mostrando las HU intervenidas, los casos te pruebas creados,
+los casos ejecutados (fallidos y aprobados), bugs reportados, mejoras reportadas,
+impedimentos y todos aquellos items que afecten el proyecto, con el fin de que el
+cliente tenga una visión general de que estamos haciendo diariamente.
+
+
+F. ¿si tuviera que entregar indicadores del proceso de pruebas que incluiría?
+
+Se enviara un indicador mostrando los test fallidos vs los test aprobados, se
+relacionara las HU y los test cases que no permiten certificar esas historias de
+usuario y mostrando el tiempo que toma el equipo de desarrollo para solucionar
+esos bugs que bloquean los casos de pruebas y por ende las HU.
