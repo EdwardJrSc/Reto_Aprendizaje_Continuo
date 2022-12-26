@@ -38,23 +38,23 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
 --- 1) Lista los nombres de los fabricantes ordenados de forma descendente. ---
 
-select nombre nf from fabricante f order by nf desc;
+SELECT nombre nf FROM fabricante f ORDER BY nf DESC;
 
 --- 2) Lista los nombres de los productos ordenados de manera Ascendente. ---
 
-select nombre np from producto p order by np asc;
+SELECT nombre np FROM producto p ORDER BY np ASC;
 
 --- 3) Lista el codigo de los fabricantes que tienen productos en la tabla producto,  mostrando los codigos sin repeticion.  ---
 
-select distinct codigo_fabricante from producto;
+SELECT distinct codigo_fabricante FROM producto;
 
 --- 4) Traer los 3 productos que tienen menor precio. ---
 
-select nombre nm, precio p from producto tp order by p asc limit 3;
+SELECT nombre nm, precio p FROM producto tp ORDER BY p ASC LIMIT 3;
 
 --- 5) Traer los cinco productos de mayor precio. ---
 
-select nombre nm, precio p from producto tp order by p desc limit 5;
+SELECT nombre nm, precio p FROM producto tp ORDER BY p DESC LIMIT 5;
 
 --- 6) Realizar la insercion de tres nuevos productos. ---
 
@@ -64,35 +64,41 @@ INSERT INTO producto VALUES(14, 'Memoria RAM 62GB 4200 Ghz', 52, 1);
 
 --- 7) Consultar los productos que sea impresora HP. ---
 
-select nombre nm from producto p where nombre like '%Impresora hp%';
+SELECT nombre nm FROM producto p WHERE nombre like '%Impresora hp%';
 
 --- 8) Eliminar uno de los nuevos productos creados.  ---
 
-delete from producto where codigo = '12';
-select codigo  from producto p order by codigo asc;
+DELETE FROM producto WHERE codigo = '12';
+SELECT codigo  FROM producto p ORDER BY codigo ASC;
 
 --- 9) Actualizar el precio de uno de los productos creados. ---
 
-update producto p set precio = '10000' where codigo = '11';
-select codigo, precio from producto p where codigo = '11';
+UPDATE producto p SET precio = '10000' WHERE codigo = '11';
+SELECT codigo, precio FROM producto p WHERE codigo = '11';
 
 --- 10)	Traer los productos que eston dentro del rango de precios 120 y 500. ---
 
-select nombre, precio from producto where precio between '120' and '500';
+SELECT nombre, precio FROM producto WHERE precio BETWEEN '120' AND '500';
 
---- 11) Consultar el nombre de cada fabricante con los productos asociados a ellos incluso mostrando los fabricantes que no tienen algon producto asignado. ---
+--- 11) Consultar el nombre de cada fabricante con los productos asociados a ellos incluso mostrando los fabricantes que no tienen algun producto asignado. ---
  
 SELECT 
     F.nombre AS 'Fabricante',
     P.nombre AS 'Producto'
-FROM Fabricante f
+FROM Fabricante F
 LEFT JOIN Producto P
 ON F.codigo = P.codigo_fabricante;
 
 --- 12) Consultar cada producto con el nombre de cada fabricante. ---
 
-select p.nombre, p.codigo_fabricante, f.nombre from producto as p inner join fabricante f on p.codigo_fabricante  = f.codigo; 
+SELECT
+  p.nombre,
+  p.codigo_fabricante,
+  f.nombre
+FROM producto AS p
+INNER JOIN fabricante f
+ON p.codigo_fabricante  = f.codigo; 
 
---- 13) Traer los productos asociados cuyo fabricante es 'Crucia' con su respectivo nombre. ---
+--- 13) Traer los productos asociados cuyo fabricante es 'Crucial' con su respectivo nombre. ---
 
-select * from producto, fabricante where producto.codigo_fabricante = '6' and fabricante.codigo = '6'; 
+SELECT * FROM producto, fabricante WHERE producto.codigo_fabricante = '6' AND fabricante.codigo = '6'; 
