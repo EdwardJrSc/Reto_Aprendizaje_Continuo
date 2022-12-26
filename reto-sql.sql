@@ -44,7 +44,7 @@ select nombre nf from fabricante f order by nf desc;
 
 select nombre np from producto p order by np asc;
 
---- 3) Lista el código de los fabricantes que tienen productos en la tabla producto,  mostrando los códigos sin repetición.  ---
+--- 3) Lista el codigo de los fabricantes que tienen productos en la tabla producto,  mostrando los codigos sin repeticion.  ---
 
 select distinct codigo_fabricante from producto;
 
@@ -56,7 +56,7 @@ select nombre nm, precio p from producto tp order by p asc limit 3;
 
 select nombre nm, precio p from producto tp order by p desc limit 5;
 
---- 6) Realizar la inserción de tres nuevos productos. ---
+--- 6) Realizar la insercion de tres nuevos productos. ---
 
 INSERT INTO producto VALUES(12, 'Tarjeta Grafica NVIDIA GeForce GTX 9999x Pro', 1286.99, 7);
 INSERT INTO producto VALUES(13, 'Disco duro SSD 1TB', 569, 9);
@@ -76,29 +76,23 @@ select codigo  from producto p order by codigo asc;
 update producto p set precio = '10000' where codigo = '11';
 select codigo, precio from producto p where codigo = '11';
 
---- 10)	Traer los productos que estén dentro del rango de precios 120 y 500. ---
+--- 10)	Traer los productos que eston dentro del rango de precios 120 y 500. ---
 
 select nombre, precio from producto where precio between '120' and '500';
 
---- 11) Consultar el nombre de cada fabricante con los productos asociados a ellos incluso mostrando los fabricantes que no tienen algún producto asignado. ---
+--- 11) Consultar el nombre de cada fabricante con los productos asociados a ellos incluso mostrando los fabricantes que no tienen algon producto asignado. ---
  
-
+SELECT 
+    F.nombre AS 'Fabricante',
+    P.nombre AS 'Producto'
+FROM Fabricante f
+LEFT JOIN Producto P
+ON F.codigo = P.codigo_fabricante;
 
 --- 12) Consultar cada producto con el nombre de cada fabricante. ---
 
 select p.nombre, p.codigo_fabricante, f.nombre from producto as p inner join fabricante f on p.codigo_fabricante  = f.codigo; 
 
---- 13) Traer los productos asociados cuyo fabricante es “Crucial” con su respectivo nombre. ---
+--- 13) Traer los productos asociados cuyo fabricante es 'Crucia' con su respectivo nombre. ---
 
 select * from producto, fabricante where producto.codigo_fabricante = '6' and fabricante.codigo = '6'; 
-
-
-
-
-
-
-
-
-
-
-
